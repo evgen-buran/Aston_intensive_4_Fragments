@@ -13,7 +13,7 @@ class FragmentA : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentABinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -22,8 +22,8 @@ class FragmentA : Fragment() {
         super.onStart()
         binding.btnToB.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView, fragmentB, "tag2")
-                .addToBackStack("pos2").commit()
+                .replace(R.id.fragmentContainerView, fragmentB)
+                .addToBackStack("toFrag_B").commit()
         }
 
     }

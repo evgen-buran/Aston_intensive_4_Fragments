@@ -9,11 +9,11 @@ import com.buranchikov.fragmentsastonapp.databinding.FragmentDBinding
 
 class FragmentD : Fragment() {
     private lateinit var binding: FragmentDBinding
-    private val fragmentB = FragmentB()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -21,8 +21,7 @@ class FragmentD : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.btnDtoB.setOnClickListener {
-            while (parentFragmentManager.findFragmentByTag("tag3")!=FragmentB())
-                parentFragmentManager.popBackStack()
+            parentFragmentManager.popBackStack("toFrag_B", 0)
         }
     }
 
