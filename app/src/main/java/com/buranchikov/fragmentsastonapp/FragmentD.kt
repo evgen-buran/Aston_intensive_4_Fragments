@@ -1,5 +1,6 @@
 package com.buranchikov.fragmentsastonapp
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +10,7 @@ import com.buranchikov.fragmentsastonapp.databinding.FragmentDBinding
 
 class FragmentD : Fragment() {
     private lateinit var binding: FragmentDBinding
-
+    private lateinit var fragmentOperation:FragmentsOperationInterface
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,9 +21,15 @@ class FragmentD : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        fragmentOperation.getCurrentFragment(parentFragmentManager.findFragmentById(R.id.fragmentContainerView), getString(R.string.tofrag_d))
         binding.btnDtoB.setOnClickListener {
-            parentFragmentManager.popBackStack("toFrag_B", 0)
+            parentFragmentManager.popBackStack(getString(R.string.tofrag_b), 0)
         }
     }
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentsOperationInterface) {
+            fragmentOperation = context
+        }
+    }
 }

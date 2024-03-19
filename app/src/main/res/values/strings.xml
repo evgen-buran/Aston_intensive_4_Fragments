@@ -11,4 +11,12 @@
     <string name="fragment_c">Fragment C</string>
     <string name="fragment_d">Fragment D</string>
     <string name="hello_fragment_c">Hello fragment C</string>
+    <string name="request">request</string>
+    <string name="hello_frag_c">hello_frag_C</string>
+    <string name="mylog">myLog</string>
+    <string name="tofrag_a">toFrag_A</string>
+    <string name="tofrag_b">toFrag_B</string>
+    <string name="tofrag_c">toFrag_C</string>
+    <string name="tofrag_d">toFrag_D</string>
+    <string name="keyBundleC">textFragmC</string>
 </resources>
